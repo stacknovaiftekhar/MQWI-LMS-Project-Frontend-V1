@@ -112,4 +112,8 @@ This project is for educational and institutional use under the Markazul Quran W
 
 Unauthorized commercial use is prohibited.
 
+---
+
 ✅ Frontend Deployed: https://markazulquranwassunnah.com
+
+---
