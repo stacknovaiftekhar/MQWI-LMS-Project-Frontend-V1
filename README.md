@@ -129,24 +129,6 @@ mqwi-frontend/
 
 ---
 
-## 🧾 Environment Configuration
-
-Create a `.env` file in your backend root:
-
-```bash
-ADMIN_NAME=Mursalin
-ADMIN_EMAIL=admin@mqwi.com
-DJANGO_SECRET_KEY=your_secret_key
-DB_NAME=mqwi_db
-DB_USER=root
-DB_PASSWORD=your_password
-DB_HOST=localhost
-DB_PORT=3306
-EMAIL_HOST_USER=your_email@example.com
-EMAIL_HOST_PASSWORD=your_email_password
-
----
-
 ## 🧑‍💻 Installation Guide
 Backend Setup
 
