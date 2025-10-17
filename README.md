@@ -1,119 +1,220 @@
-# 🎓 Markazul Quran Wassunnah Institute (MQWI) - LMS Frontend
+# 🌙 Markazul Quran Wassunnah Institute – Learning Management System (LMS)
 
-**Learning Management System (LMS) Frontend** built for **Markazul Quran Wassunnah Institute** using **React.js**, **JavaScript**, **Bootstrap**, **HTML**, and **CSS**.  
+### 📚 Full-Stack LMS | Django REST Framework + React | MySQL
 
-This frontend interfaces with the Django REST API backend to deliver a smooth, responsive, and interactive learning experience for students, teachers, and administrators.
-
----
-
-## 🚀 Features
-
-- **Responsive Multi-Role Dashboard**
-  - Separate dashboards for **Admin**, **Teachers**, and **Students**
-  - Role-based route protection and dynamic navigation  
-
-- **Admin Panel**
-  - Manage Teachers, Students, Categories, Courses, Modules, Lessons, Payments, and Sadaqah  
-  - Integrated DataTables for record display, search, and delete functionality  
-  - Sidebar with icons, toggle feature, and modern green-themed UI  
-
-- **Course & Lesson System**
-  - View all courses by category  
-  - Interactive lesson player with completion tracking  
-  - Module-wise lesson progression  
-
-- **Enrollment & Payment**
-  - Secure course enrollment via integrated payment gateways  
-  - Supported gateways: **Bkash**, **Nagad**, **Rocket**, **Islami Bank**  
-  - Registration and monthly payment handling with modal-based UI  
-
-- **Invoice Management**
-  - Display and download invoices linked with payments  
-  - Auto-refresh upon payment verification or invoice deletion  
-
-- **User Authentication**
-  - JWT-based login and registration  
-  - Access/Refresh tokens stored in `localStorage`  
-  - Protected API requests with Authorization headers  
-
-- **Contact & Sadaqah Forms**
-  - Public forms for donations (Sadaqah) and contact messages  
-  - File upload support and visual feedback for actions  
-
-- **Mobile Friendly & Optimized**
-  - Fully responsive layout using **Bootstrap Grid**  
-  - Adaptive design for desktop, tablet, and mobile views  
+![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)
+![Django REST Framework](https://img.shields.io/badge/Backend-Django%20REST%20Framework-green?logo=django)
+![MySQL](https://img.shields.io/badge/Database-MySQL-orange?logo=mysql)
+![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-purple?logo=bootstrap)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+![Deployment](https://img.shields.io/badge/Deployed-Linux%20Server%20(Ubuntu)-blue?logo=linux)
 
 ---
 
-## 🛠️ Technologies Used
+## 🕌 Overview
 
-### **Core Framework**
-- React.js (18+)
-- JavaScript (ES6+)
-
-### **UI & Styling**
-- Bootstrap 5
-- HTML5
-- CSS3
-- Font Awesome Icons
-- Responsive Grid & Utility Classes
-
-### **State & API Handling**
-- React Router DOM (Routing)
-- Axios (API Requests)
-- LocalStorage (Token Management)
-
-### **Animation & UX Enhancements**
-- React Modal / Bootstrap Modal
-- Conditional Rendering and Loading States
-
-### **Backend Integration**
-- Django REST Framework API
+**Markazul Quran Wassunnah Institute (MQWI)** is a comprehensive **Learning Management System (LMS)** designed for Islamic education and modern e-learning needs.  
+This project enables **admins, teachers, and students** to interact through a unified platform — managing **courses, modules, lessons, enrollments, payments, invoices, and sadaqah** (charity) efficiently.
 
 ---
 
-## 🌟 Key Components & Pages
-- AdminDashboard.jsx – Main admin layout with Sidebar & Outlet
-- Teachers.jsx / Students.jsx – CRUD management for users
-- Category.jsx / Courses.jsx – Course structure management
-- EnrollForm.jsx – Dynamic enrollment with payment gateway selection
-- PaymentCard.jsx – View, verify, and manage payments
-- SadaqahForm.jsx – User donation interface
-- ModulesPage.jsx – Course module with “Mark as Complete” feature
+## 🚀 Tech Stack
+
+| Category | Technologies Used |
+|-----------|------------------|
+| **Frontend** | React.js, JavaScript (ES6), Bootstrap, HTML5, CSS3 |
+| **Backend** | Django 5, Django REST Framework (DRF) |
+| **Database** | MySQL |
+| **Server / Deployment** | Gunicorn, Nginx, Linux (Ubuntu) |
+| **Authentication** | JWT Authentication |
+| **PDF & Email** | ReportLab, Django Email Utilities |
+| **Media Handling** | Django Media Storage (images, videos, PDFs) |
+| **Version Control** | Git & GitHub |
 
 ---
 
-## 📚 What We Learned
-- Building modular React components for scalability
-- Managing authentication & route protection using JWT tokens
-- Integrating frontend with Django REST APIs
-- Handling file uploads and media rendering
-- Implementing CRUD with Axios and React Hooks
-- Designing dashboards with Bootstrap and responsive layouts
-- Improving user experience using modal interactions and hover effects
-- Deploying production build on cPanel with proper routing configuration
+## ⚙️ Features
+
+### 🧑‍💼 Admin Dashboard
+- Sidebar navigation with menus: **Teachers, Students, Categories, Courses, Modules, Lessons, Payments, Messages, Sadaqah**
+- CRUD operations for all major entities
+- User info display (name, image, logout)
+- Responsive and toggleable sidebar
+
+### 👨‍🏫 Teachers Management
+- Full CRUD using `TeacherViewSet`  
+- Integrated with `User` model via OneToOne relationship  
+- List and detail views via React Router `<Outlet>`
+
+### 👩‍🎓 Students Management
+- CRUD with `StudentSerializer` and `StudentViewSet`
+- Clean DataTable presentation
+- Shared delete hooks for consistency
+
+### 📚 Course, Module & Lesson Management
+- Nested serializers (Modules include Lessons)
+- Lesson completion tracking
+- Dynamic frontend lesson progression UI
+
+### 💰 Payments & Enrollment System
+- Registration & Monthly payment flow  
+- Automatic **Invoice PDF generation** and **emailing**
+- Admin can void payment/invoice and delete associated files
+- Integration with multiple payment methods (Bkash, Nagad, Rocket, Islami)
+
+### 🕋 Sadaqah (Charity) Module
+- GenericForeignKey to support multiple payment methods dynamically  
+- Integrated with the same payment and invoice system
 
 ---
 
-## 👨‍💻 Author
-IFTEKHAR HASAN
+## 🖼️ Frontend UI Highlights
 
-👨‍💻 Developer & Maintainer
-
-📧 admin@markazulquranwassunnah.com
-
-🌐 markazulquranwassunnah.com
-
----
-
-## 📝 License
-This project is for educational and institutional use under the Markazul Quran Wassunnah Institute.
-
-Unauthorized commercial use is prohibited.
+- Responsive **Admin Dashboard** with collapsible sidebar  
+- Dynamic **DataTables** for Teachers, Students, and Payments  
+- Modal-based **payment forms** (EnrollForm, SadaqahForm)  
+- Animated **highlight effects** for selected payment methods  
+- Fully responsive layouts across all screen sizes (using Bootstrap grid)
 
 ---
 
-✅ Frontend Deployed: https://markazulquranwassunnah.com
+## 🧩 Folder Structure (Simplified)
+
+<details>
+<summary>📁 Backend (Django)</summary>
+
+mqwi-backend/
+├── manage.py
+├── mqwi_backend/
+│ ├── settings.py
+│ ├── urls.py
+│ ├── wsgi.py
+│ └── asgi.py
+├── courses/
+├── teachers/
+├── students/
+├── payment/
+├── sadaqah/
+└── media/
+
+</details>
+
+<details>
+<summary>📁 Frontend (React)</summary>
+
+mqwi-frontend/
+├── src/
+│ ├── components/
+│ ├── pages/
+│ ├── admin/
+│ ├── hooks/
+│ ├── App.jsx
+│ ├── index.js
+│ └── styles/
+└── public/
+
+</details>
+
+---
+
+## 🧠 What We Learned
+
+- 🔹 Integrating **Django REST Framework with React** using JWT authentication  
+- 🔹 Structuring scalable **CRUD operations** for multiple entities  
+- 🔹 Handling **nested serializers** for modules & lessons  
+- 🔹 Generating and emailing **PDF invoices** dynamically  
+- 🔹 Managing **media/static files** in production  
+- 🔹 Building responsive, reusable React components  
+- 🔹 Deploying Django + React on **Ubuntu with Nginx and Gunicorn**
+
+---
+
+## 🧾 Environment Configuration
+
+Create a `.env` file in your backend root:
+
+```bash
+ADMIN_NAME=Mursalin
+ADMIN_EMAIL=admin@mqwi.com
+DJANGO_SECRET_KEY=your_secret_key
+DB_NAME=mqwi_db
+DB_USER=root
+DB_PASSWORD=your_password
+DB_HOST=localhost
+DB_PORT=3306
+EMAIL_HOST_USER=your_email@example.com
+EMAIL_HOST_PASSWORD=your_email_password
+
+---
+
+## 🧑‍💻 Installation Guide
+Backend Setup
+
+# Clone the repository
+git clone https://github.com/yourusername/mqwi-lms.git
+cd mqwi-lms/backend
+
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate  # (or venv\Scripts\activate on Windows)
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Apply migrations
+python manage.py migrate
+
+# Create superuser
+python manage.py createsuperuser
+
+# Run server
+python manage.py runserver
+
+Frontend Setup
+
+cd ../frontend
+npm install
+npm start
+
+---
+
+## 🌐 Deployment Overview
+
+- Server: Ubuntu 22.04 LTS
+
+- Web Server: Nginx + Gunicorn
+
+- Static & Media Root: /home/markazul/server/static/ and /home/markazul/server/media/
+
+- Reverse Proxy: Configured via Nginx to serve React build and Django API endpoints
+
+---
+
+## 📸 Preview
+<details> <summary>🖥️ Click to Expand Screenshots</summary>
+Dashboard	Teachers	Payments
+</details>
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License – feel free to use, modify, and distribute it.
+
+---
+
+## 💡 Author & Credits
+
+👤 Developer: Iftekhar Hasan
+
+📧 Contact: iftekhar.hasan@example.com
+
+🏫 Organization: Markazul Quran Wassunnah Institute (MQWI)
+
+“Empowering Quranic learning through technology.” 🌙
+
+---
+
+⭐ If you like this project, please give it a star on GitHub! ⭐
 
 ---
