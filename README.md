@@ -131,7 +131,7 @@ mqwi-frontend/
 
 ## 🧑‍💻 Installation Guide
 ```bash
-Backend Setup
+## Backend Setup:
 
 # Clone the repository
 git clone https://github.com/yourusername/mqwi-lms.git
@@ -153,7 +153,7 @@ python manage.py createsuperuser
 # Run server
 python manage.py runserver
 
-Frontend Setup
+## Frontend Setup:
 
 cd ../frontend
 npm install
@@ -171,13 +171,6 @@ npm start
 - Static & Media Root: /home/markazul/server/static/ and /home/markazul/server/media/
 
 - Reverse Proxy: Configured via Nginx to serve React build and Django API endpoints
-
----
-
-## 📸 Preview
-<details> <summary>🖥️ Click to Expand Screenshots</summary>
-Dashboard	Teachers	Payments
-</details>
 
 ---
 
