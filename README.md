@@ -96,16 +96,20 @@ This frontend interfaces with the Django REST API backend to deliver a smooth, r
 
 ---
 
-👨‍💻 Author
+## 👨‍💻 Author
 IFTEKHAR HASAN
+
 👨‍💻 Developer & Maintainer
-📧 info@markazulquranwassunnah.com
+
+📧 admin@markazulquranwassunnah.com
+
 🌐 markazulquranwassunnah.com
 
 ---
 
-📝 License
+## 📝 License
 This project is for educational and institutional use under the Markazul Quran Wassunnah Institute.
+
 Unauthorized commercial use is prohibited.
 
 ✅ Frontend Deployed: https://markazulquranwassunnah.com
