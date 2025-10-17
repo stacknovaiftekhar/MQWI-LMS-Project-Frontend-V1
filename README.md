@@ -119,13 +119,13 @@ mqwi-frontend/
 
 ## 🧠 What We Learned
 
-- 🔹 Integrating **Django REST Framework with React** using JWT authentication  
-- 🔹 Structuring scalable **CRUD operations** for multiple entities  
-- 🔹 Handling **nested serializers** for modules & lessons  
-- 🔹 Generating and emailing **PDF invoices** dynamically  
-- 🔹 Managing **media/static files** in production  
-- 🔹 Building responsive, reusable React components  
-- 🔹 Deploying Django + React on **Ubuntu with Nginx and Gunicorn**
+🔹 Integrating **Django REST Framework with React** using JWT authentication  
+🔹 Structuring scalable **CRUD operations** for multiple entities  
+🔹 Handling **nested serializers** for modules & lessons  
+🔹 Generating and emailing **PDF invoices** dynamically  
+🔹 Managing **media/static files** in production  
+🔹 Building responsive, reusable React components  
+🔹 Deploying Django + React on **Ubuntu with Nginx and Gunicorn**
 
 ---
 
