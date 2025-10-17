@@ -130,6 +130,7 @@ mqwi-frontend/
 ---
 
 ## 🧑‍💻 Installation Guide
+```bash
 Backend Setup
 
 # Clone the repository
