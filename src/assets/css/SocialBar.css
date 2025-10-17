@@ -1,0 +1,1392 @@
+/******************* CSS-01 ********************/
+/* Create a floating social media bar that stays fixed on the right-middle of the screen, visible across all pages. */
+.social-bar {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon.whatsapp {
+  background: #25d366;
+}
+.social-icon.facebook {
+  background: #1877f2;
+}
+.social-icon.messenger {
+  background: #0084ff;
+}
+
+.social-icon:hover {
+  transform: scale(1.15);
+  opacity: 0.9;
+}
+/* 👉 This will make a floating WhatsApp, Facebook, Messenger icon bar on the right-middle side, visible on all pages. */
+/******************* END-01 ********************/
+
+
+/******************* CSS-02 ********************/
+/* We’ll add tooltips + hover grow/blinking effect for your floating social icons. */
+.social-bar {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Tooltip styling */
+.social-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 55px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.social-icon:hover::after {
+  opacity: 1;
+}
+
+/* Brand colors */
+.social-icon.whatsapp {
+  background: #25d366;
+}
+.social-icon.facebook {
+  background: #1877f2;
+}
+.social-icon.messenger {
+  background: #0084ff;
+}
+
+/* Hover animation effect */
+.social-icon:hover {
+  transform: scale(1.3);
+  opacity: 0.85;
+  animation: pulse 0.6s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+/* On hover, tooltip appears (left).  |  Icon grows with pulse animation.  |  Background gets slightly dimmed for the effect. */
+/******************* END-02 ********************/
+
+
+/******************* CSS-03 ********************/
+/* Replace the pulse/scale effect with a glowing effect on hover.  Add a slide-in animation from the right when the icons first load. */
+.social-bar {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Tooltip styling */
+.social-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideIn 0.8s forwards;
+}
+
+.social-icon:nth-child(1) { animation-delay: 0.1s; }
+.social-icon:nth-child(2) { animation-delay: 0.2s; }
+.social-icon:nth-child(3) { animation-delay: 0.3s; }
+.social-icon:nth-child(4) { animation-delay: 0.4s; }
+
+.social-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 55px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.social-icon:hover::after {
+  opacity: 1;
+}
+
+/* Brand colors */
+.social-icon.call {
+  background: #28a745; /* green */
+}
+.social-icon.whatsapp {
+  background: #25d366;
+}
+.social-icon.facebook {
+  background: #1877f2;
+}
+.social-icon.messenger {
+  background: #0084ff;
+}
+
+/* Hover glowing effect */
+.social-icon:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 
+              0 0 25px currentColor, 
+              0 0 35px currentColor;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* Added slide-in animation (icons appear one by one from right).
+   On hover → icons now glow outside with a smooth light effect (instead of pulsing). */
+/******************* END-03 ********************/
+
+
+/******************* CSS-04 ********************/
+/* Tooltip background color matches brand (green for WhatsApp, blue for FB).  Ripple animation effect on hover (same brand color). */
+.social-bar {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.social-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0;
+  animation: slideIn 0.8s forwards;
+}
+
+.social-icon:nth-child(1) { animation-delay: 0.1s; }
+.social-icon:nth-child(2) { animation-delay: 0.2s; }
+.social-icon:nth-child(3) { animation-delay: 0.3s; }
+.social-icon:nth-child(4) { animation-delay: 0.4s; }
+
+/* Tooltips */
+.social-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 55px;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.social-icon:hover::after {
+  opacity: 1;
+}
+
+/* Brand colors for icons */
+.social-icon.call { background: #28a745; }
+.social-icon.whatsapp { background: #25d366; }
+.social-icon.facebook { background: #1877f2; }
+.social-icon.messenger { background: #0084ff; }
+
+/* Brand colors for tooltips */
+.social-icon.call::after { background: #28a745; }
+.social-icon.whatsapp::after { background: #25d366; }
+.social-icon.facebook::after { background: #1877f2; }
+.social-icon.messenger::after { background: #0084ff; }
+
+/* Ripple effect */
+.social-icon::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.social-icon:hover::before {
+  animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Ripple color matches brand */
+.social-icon.call::before { background: rgba(40, 167, 69, 0.5); }
+.social-icon.whatsapp::before { background: rgba(37, 211, 102, 0.5); }
+.social-icon.facebook::before { background: rgba(24, 119, 242, 0.5); }
+.social-icon.messenger::before { background: rgba(0, 132, 255, 0.5); }
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* Updates:  Tooltip background = brand color.  |  Ripple animation on hover.  |  Still has slide-in effect when page loads. */
+/******************* END-04 ********************/
+
+
+/******************* CSS-05 ********************/
+/* Here’s the drop-in CSS replacement to get the multi-ring ripple glow (SCSS → pure CSS) per brand. */
+/* --- Ripple (multi-ring, brand-colored) --- */
+.social-icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: visible;           /* let the rings show outside */
+  box-shadow: none;
+  will-change: box-shadow;
+  transition: transform .2s ease;
+}
+.social-icon:hover { transform: scale(1.03); }
+
+/* Trigger brand-specific ripple on hover */
+.social-icon.whatsapp:hover { animation: ripple-whatsapp 0.9s linear infinite; }
+.social-icon.facebook:hover { animation: ripple-facebook 0.9s linear infinite; }
+.social-icon.messenger:hover { animation: ripple-messenger 0.9s linear infinite; }
+.social-icon.call:hover { animation: ripple-call 0.9s linear infinite; }
+
+/* WhatsApp */
+@keyframes ripple-whatsapp {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(37,211,102,0.30),
+      0 0 0 12px rgba(37,211,102,0.30),
+      0 0 0 24px rgba(37,211,102,0.30),
+      0 0 0 36px rgba(37,211,102,0.30);
+  }
+  100% {
+    box-shadow:
+      0 0 0 12px rgba(37,211,102,0.30),
+      0 0 0 24px rgba(37,211,102,0.30),
+      0 0 0 36px rgba(37,211,102,0.30),
+      0 0 0 48px rgba(37,211,102,0);
+  }
+}
+
+/* Facebook */
+@keyframes ripple-facebook {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(24,119,242,0.30),
+      0 0 0 12px rgba(24,119,242,0.30),
+      0 0 0 24px rgba(24,119,242,0.30),
+      0 0 0 36px rgba(24,119,242,0.30);
+  }
+  100% {
+    box-shadow:
+      0 0 0 12px rgba(24,119,242,0.30),
+      0 0 0 24px rgba(24,119,242,0.30),
+      0 0 0 36px rgba(24,119,242,0.30),
+      0 0 0 48px rgba(24,119,242,0);
+  }
+}
+
+/* Messenger */
+@keyframes ripple-messenger {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(0,132,255,0.30),
+      0 0 0 12px rgba(0,132,255,0.30),
+      0 0 0 24px rgba(0,132,255,0.30),
+      0 0 0 36px rgba(0,132,255,0.30);
+  }
+  100% {
+    box-shadow:
+      0 0 0 12px rgba(0,132,255,0.30),
+      0 0 0 24px rgba(0,132,255,0.30),
+      0 0 0 36px rgba(0,132,255,0.30),
+      0 0 0 48px rgba(0,132,255,0);
+  }
+}
+
+/* Call */
+@keyframes ripple-call {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(40,167,69,0.30),
+      0 0 0 12px rgba(40,167,69,0.30),
+      0 0 0 24px rgba(40,167,69,0.30),
+      0 0 0 36px rgba(40,167,69,0.30);
+  }
+  100% {
+    box-shadow:
+      0 0 0 12px rgba(40,167,69,0.30),
+      0 0 0 24px rgba(40,167,69,0.30),
+      0 0 0 36px rgba(40,167,69,0.30),
+      0 0 0 48px rgba(40,167,69,0);
+  }
+}
+
+/* Keep your existing brand backgrounds & tooltips */
+.social-icon.call { background: #28a745; }
+.social-icon.whatsapp { background: #25d366; }
+.social-icon.facebook { background: #1877f2; }
+.social-icon.messenger { background: #0084ff; }
+
+.social-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 55px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;
+}
+.social-icon:hover::after { opacity: 1; }
+.social-icon.call::after { background: #28a745; }
+.social-icon.whatsapp::after { background: #25d366; }
+.social-icon.facebook::after { background: #1877f2; }
+.social-icon.messenger::after { background: #0084ff; }
+
+/* Slide-in on mount (unchanged) */
+.social-icon { opacity: 0; animation: slideIn 0.8s forwards; }
+.social-icon:nth-child(1) { animation-delay: .1s; }
+.social-icon:nth-child(2) { animation-delay: .2s; }
+.social-icon:nth-child(3) { animation-delay: .3s; }
+.social-icon:nth-child(4) { animation-delay: .4s; }
+@keyframes slideIn {
+  from { transform: translateX(80px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+/* Optional single-color ripple (if you ever want one color for all): swap the four @keyframes ripple-* with a single @keyframes ripple-one using your chosen rgba, and use: .social-icon:hover { animation: ripple-one 0.9s linear infinite; }. */
+/******************* END-05 ********************/
+
+
+/******************* CSS-06 ********************/
+/* You don’t want just a simple "grow" hover effect, but a pulse-grow (it grows a bit, then returns to normal, continuously pulsing while hovered).  I’ll update CSS accordingly while keeping slide-in and tooltip intact. Here’s the updated CSS with Pulse Grow Animation: */
+.social-bar {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Tooltip Styling */
+.social-bar .social-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 20%;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideIn 0.8s forwards;
+}
+
+.social-bar .social-icon:nth-child(1) { animation-delay: 0.1s; }
+.social-bar .social-icon:nth-child(2) { animation-delay: 0.2s; }
+.social-bar .social-icon:nth-child(3) { animation-delay: 0.3s; }
+.social-bar .social-icon:nth-child(4) { animation-delay: 0.4s; }
+
+.social-bar .social-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 55px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.social-bar .social-icon:hover::after { opacity: 1; }
+
+/* Brand Colors */
+.social-bar .social-icon.facebook { background: #1877f2; }
+.social-bar .social-icon.whatsapp { background: #25d366; }
+.social-bar .social-icon.messenger { background: #0084ff; }
+.social-bar .social-icon.call { background: #FD9832; }
+
+/* Pulse Grow Effect on Hover */
+.social-bar .social-icon:hover {
+  animation: pulseGrow 1s infinite;
+}
+
+/* Different glow colors */
+.social-bar .social-icon.facebook:hover {
+  box-shadow: 0 0 20px rgba(24, 119, 242, 0.8),
+              0 0 30px currentColor,
+              0 0 40px currentColor;
+}
+.social-bar .social-icon.whatsapp:hover {
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.8), 
+              0 0 30px currentColor,
+              0 0 40px currentColor;
+}
+.social-bar .social-icon.messenger:hover {
+  box-shadow: 0 0 20px rgba(0, 132, 255, 0.8), 
+              0 0 30px currentColor,
+              0 0 40px currentColor;
+}
+.social-bar .social-icon.call:hover {
+  box-shadow: 0 0 20px rgba(253, 152, 50, 0.8), 
+              0 0 30px currentColor,
+              0 0 40px currentColor;
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Pulse Grow Animation */
+@keyframes pulseGrow {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+/* Now when you hover over an icon:  ● It will pulse-grow smoothly (scale up → back down → repeat).
+  ● The glow still matches each brand color.  ● Tooltip behavior remains unchanged. */
+/******************* END-06 ********************/
+
+
+/******************* CSS-07 ********************/
+/* The issue is happening because in your current CSS the hover animation (pulseGrow) is replacing the element’s transform, and since your icons already use transform for the slide-in effect (translateX), the hover animation overrides it, causing a “disappear” jump.
+To fix this:  1. We’ll use scale only inside the animation, without resetting translate.
+  2. Keep animation separate from the base slide-in effect so they don’t conflict. */
+/************ SOCIAL ICON ************/
+.social-bar {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Tooltip Styling */
+.social-bar .social-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 20%;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideIn 0.8s forwards;
+}
+
+.social-bar .social-icon:nth-child(1) { animation-delay: 0.1s; }
+.social-bar .social-icon:nth-child(2) { animation-delay: 0.2s; }
+.social-bar .social-icon:nth-child(3) { animation-delay: 0.3s; }
+.social-bar .social-icon:nth-child(4) { animation-delay: 0.4s; }
+
+.social-bar .social-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 55px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.social-bar .social-icon:hover::after { opacity: 1; }
+
+/* Brand Colors */
+.social-bar .social-icon.facebook { background: #1877f2; }
+.social-bar .social-icon.whatsapp { background: #25d366; }
+.social-bar .social-icon.messenger { background: #0084ff; }
+.social-bar .social-icon.call { background: #FD9832; }
+
+/* Pulse Grow Animation */
+.social-bar .social-icon:hover {
+  animation: pulseGrow 1s infinite;
+}
+
+@keyframes pulseGrow {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* Key Fix:  ● pulseGrow animation only changes scale, not translate.
+  ● The slide-in animation (translateX) remains intact since it runs only once on load.  ● Now icons won’t disappear on hover. */
+/******************* END-07 ********************/
+
+
+/******************* CSS-08 ********************/
+/* We’ll combine both glowing shadow + pulse grow animation on hover.  |  Trick is:  ● Keep @keyframes pulseGrow to only handle scaling.
+  ● Add brand-specific glow shadows inside :hover.  ● Ensure pulseGrow runs alongside the glow, not replacing it. */
+/************ SOCIAL ICON ************/
+.social-bar {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Tooltip Styling */
+.social-bar .social-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 20%;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideIn 0.8s forwards;
+}
+
+.social-bar .social-icon:nth-child(1) { animation-delay: 0.1s; }
+.social-bar .social-icon:nth-child(2) { animation-delay: 0.2s; }
+.social-bar .social-icon:nth-child(3) { animation-delay: 0.3s; }
+.social-bar .social-icon:nth-child(4) { animation-delay: 0.4s; }
+
+.social-bar .social-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 55px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.social-bar .social-icon:hover::after { opacity: 1; }
+
+/* Brand Colors */
+.social-bar .social-icon.facebook { background: #1877f2; }
+.social-bar .social-icon.whatsapp { background: #25d366; }
+.social-bar .social-icon.messenger { background: #0084ff; }
+.social-bar .social-icon.call { background: #FD9832; }
+
+/* Hover Combined Effect (Glow + Pulse) */
+.social-bar .social-icon.facebook:hover {
+  animation: pulseGrow 1s infinite;
+  box-shadow: 0 0 20px rgba(24, 119, 242, 0.8),
+              0 0 30px currentColor,
+              0 0 40px currentColor;
+}
+
+.social-bar .social-icon.whatsapp:hover {
+  animation: pulseGrow 1s infinite;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.8), 
+              0 0 30px currentColor,
+              0 0 40px currentColor;
+}
+
+.social-bar .social-icon.messenger:hover {
+  animation: pulseGrow 1s infinite;
+  box-shadow: 0 0 20px rgba(0, 132, 255, 0.8), 
+              0 0 30px currentColor,
+              0 0 40px currentColor;
+}
+
+.social-bar .social-icon.call:hover {
+  animation: pulseGrow 1s infinite;
+  box-shadow: 0 0 20px rgba(253, 152, 50, 0.8), 
+              0 0 30px currentColor,
+              0 0 40px currentColor;
+}
+
+/* Pulse Grow Animation */
+@keyframes pulseGrow {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* Hover now applies both:  ● pulse grow animation (scale up and down continuously).  ● brand-specific glow shadow around the icon.
+   So when you hover → it pulses + glows in the brand color. */
+/******************* END-08 ********************/
+
+
+/******************* CSS-09 ********************/
+/* The disappearing happens because when you put animation on hover (pulseGrow), it overwrites the slideIn animation. Let’s simplify: remove pulseGrow, keep only a smooth glowing shadow on hover + brand-colored tooltip backgrounds.  Here’s the clean version: */
+/************ SOCIAL ICON ************/
+.social-bar {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Icons */
+.social-bar .social-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 20%;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideIn 0.8s forwards;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.social-bar .social-icon:nth-child(1) { animation-delay: 0.1s; }
+.social-bar .social-icon:nth-child(2) { animation-delay: 0.2s; }
+.social-bar .social-icon:nth-child(3) { animation-delay: 0.3s; }
+.social-bar .social-icon:nth-child(4) { animation-delay: 0.4s; }
+
+/* Tooltip */
+.social-bar .social-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 55px;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.social-bar .social-icon:hover::after { opacity: 1; }
+
+/* Brand colors */
+.social-bar .social-icon.facebook { background: #1877f2; }
+.social-bar .social-icon.whatsapp { background: #25d366; }
+.social-bar .social-icon.messenger { background: #0084ff; }
+.social-bar .social-icon.call { background: #FD9832; }
+
+/* Tooltip brand backgrounds */
+.social-bar .social-icon.facebook::after { background: #1877f2; }
+.social-bar .social-icon.whatsapp::after { background: #25d366; }
+.social-bar .social-icon.messenger::after { background: #0084ff; }
+.social-bar .social-icon.call::after { background: #FD9832; }
+
+/* Hover Glow Effect (Smooth) */
+.social-bar .social-icon:hover {
+  transform: scale(1.15);
+}
+
+.social-bar .social-icon.facebook:hover {
+  box-shadow: 0 0 15px rgba(24, 119, 242, 0.8),
+              0 0 25px rgba(24, 119, 242, 0.6);
+}
+
+.social-bar .social-icon.whatsapp:hover {
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.8),
+              0 0 25px rgba(37, 211, 102, 0.6);
+}
+
+.social-bar .social-icon.messenger:hover {
+  box-shadow: 0 0 15px rgba(0, 132, 255, 0.8),
+              0 0 25px rgba(0, 132, 255, 0.6);
+}
+
+.social-bar .social-icon.call:hover {
+  box-shadow: 0 0 15px rgba(253, 152, 50, 0.8),
+              0 0 25px rgba(253, 152, 50, 0.6);
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* Updates made:  ● Removed pulseGrow (no more disappearing).  ● Added smooth transition for glow + scale on hover.
+  ● Tooltip now matches each brand’s color instead of all black.  ● Glow shadow looks soft and expands smoothly. */
+/******************* END-09 ********************/
+
+
+/******************* CSS-10 ********************/
+/* Perfect 👍 that will make the icons look more alive and eye-catching.  We can add a soft breathing glow animation for each brand color that runs continuously, and then keep the stronger glow + scale when hovered.  |  Here’s the updated CSS: */
+/************ SOCIAL ICON ************/
+.social-bar {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Icons */
+.social-bar .social-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 20%;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideIn 0.8s forwards;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.social-bar .social-icon:nth-child(1) { animation-delay: 0.1s; }
+.social-bar .social-icon:nth-child(2) { animation-delay: 0.2s; }
+.social-bar .social-icon:nth-child(3) { animation-delay: 0.3s; }
+.social-bar .social-icon:nth-child(4) { animation-delay: 0.4s; }
+
+/* Tooltip */
+.social-bar .social-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 55px;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.social-bar .social-icon:hover::after { opacity: 1; }
+
+/* Brand colors */
+.social-bar .social-icon.facebook { 
+  background: #1877f2; 
+  animation: breathing-facebook 3s infinite ease-in-out;
+}
+.social-bar .social-icon.whatsapp { 
+  background: #25d366; 
+  animation: breathing-whatsapp 3s infinite ease-in-out;
+}
+.social-bar .social-icon.messenger { 
+  background: #0084ff; 
+  animation: breathing-messenger 3s infinite ease-in-out;
+}
+.social-bar .social-icon.call { 
+  background: #FD9832; 
+  animation: breathing-call 3s infinite ease-in-out;
+}
+
+/* Tooltip brand backgrounds */
+.social-bar .social-icon.facebook::after { background: #1877f2; }
+.social-bar .social-icon.whatsapp::after { background: #25d366; }
+.social-bar .social-icon.messenger::after { background: #0084ff; }
+.social-bar .social-icon.call::after { background: #FD9832; }
+
+/* Hover Glow Effect (Stronger) */
+.social-bar .social-icon:hover {
+  transform: scale(1.15);
+}
+
+.social-bar .social-icon.facebook:hover {
+  box-shadow: 0 0 18px rgba(24, 119, 242, 0.9),
+              0 0 28px rgba(24, 119, 242, 0.6);
+}
+
+.social-bar .social-icon.whatsapp:hover {
+  box-shadow: 0 0 18px rgba(37, 211, 102, 0.9),
+              0 0 28px rgba(37, 211, 102, 0.6);
+}
+
+.social-bar .social-icon.messenger:hover {
+  box-shadow: 0 0 18px rgba(0, 132, 255, 0.9),
+              0 0 28px rgba(0, 132, 255, 0.6);
+}
+
+.social-bar .social-icon.call:hover {
+  box-shadow: 0 0 18px rgba(253, 152, 50, 0.9),
+              0 0 28px rgba(253, 152, 50, 0.6);
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Breathing Glow Animations */
+@keyframes breathing-facebook {
+  0%, 100% { box-shadow: 0 0 5px rgba(24, 119, 242, 0.5); }
+  50%      { box-shadow: 0 0 12px rgba(24, 119, 242, 0.8); }
+}
+@keyframes breathing-whatsapp {
+  0%, 100% { box-shadow: 0 0 5px rgba(37, 211, 102, 0.5); }
+  50%      { box-shadow: 0 0 12px rgba(37, 211, 102, 0.8); }
+}
+@keyframes breathing-messenger {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 132, 255, 0.5); }
+  50%      { box-shadow: 0 0 12px rgba(0, 132, 255, 0.8); }
+}
+@keyframes breathing-call {
+  0%, 100% { box-shadow: 0 0 5px rgba(253, 152, 50, 0.5); }
+  50%      { box-shadow: 0 0 12px rgba(253, 152, 50, 0.8); }
+}
+/* What changed:  ● Each icon always breathes softly (gentle glow in/out).   ● Tooltip colors still match brand.
+  ● On hover → breathing stops being noticeable, replaced by stronger glow + scale.   ● No more disappearing issues. */
+/******************* END-10 ********************/
+
+
+/******************* CSS-11 ********************/
+/* We’ll remove the slide-in animation completely (so no flicker/disappearing issues), and instead of replacing the breathing glow on hover, we’ll smoothly transition from the subtle breathing glow to a stronger glow. */
+/************ SOCIAL ICON ************/
+.social-bar {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Icons */
+.social-bar .social-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 20%;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.6s ease; /* smooth blending */
+}
+
+/* Tooltip */
+.social-bar .social-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 55px;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.social-bar .social-icon:hover::after { opacity: 1; }
+
+/* Brand colors + continuous breathing glow */
+.social-bar .social-icon.facebook { 
+  background: #1877f2; 
+  animation: breathing-facebook 3s infinite ease-in-out;
+}
+.social-bar .social-icon.whatsapp { 
+  background: #25d366; 
+  animation: breathing-whatsapp 3s infinite ease-in-out;
+}
+.social-bar .social-icon.messenger { 
+  background: #0084ff; 
+  animation: breathing-messenger 3s infinite ease-in-out;
+}
+.social-bar .social-icon.call { 
+  background: #FD9832; 
+  animation: breathing-call 3s infinite ease-in-out;
+}
+
+/* Tooltip brand backgrounds */
+.social-bar .social-icon.facebook::after { background: #1877f2; }
+.social-bar .social-icon.whatsapp::after { background: #25d366; }
+.social-bar .social-icon.messenger::after { background: #0084ff; }
+.social-bar .social-icon.call::after { background: #FD9832; }
+
+/* Hover: smoothly blend breathing → stronger glow */
+.social-bar .social-icon:hover {
+  transform: scale(1.15);
+}
+
+.social-bar .social-icon.facebook:hover {
+  box-shadow: 0 0 22px rgba(24, 119, 242, 0.95),
+              0 0 34px rgba(24, 119, 242, 0.7);
+}
+
+.social-bar .social-icon.whatsapp:hover {
+  box-shadow: 0 0 22px rgba(37, 211, 102, 0.95),
+              0 0 34px rgba(37, 211, 102, 0.7);
+}
+
+.social-bar .social-icon.messenger:hover {
+  box-shadow: 0 0 22px rgba(0, 132, 255, 0.95),
+              0 0 34px rgba(0, 132, 255, 0.7);
+}
+
+.social-bar .social-icon.call:hover {
+  box-shadow: 0 0 22px rgba(253, 152, 50, 0.95),
+              0 0 34px rgba(253, 152, 50, 0.7);
+}
+
+/* Continuous Breathing Glow Animations */
+@keyframes breathing-facebook {
+  0%, 100% { box-shadow: 0 0 6px rgba(24, 119, 242, 0.5); }
+  50%      { box-shadow: 0 0 14px rgba(24, 119, 242, 0.75); }
+}
+@keyframes breathing-whatsapp {
+  0%, 100% { box-shadow: 0 0 6px rgba(37, 211, 102, 0.5); }
+  50%      { box-shadow: 0 0 14px rgba(37, 211, 102, 0.75); }
+}
+@keyframes breathing-messenger {
+  0%, 100% { box-shadow: 0 0 6px rgba(0, 132, 255, 0.5); }
+  50%      { box-shadow: 0 0 14px rgba(0, 132, 255, 0.75); }
+}
+@keyframes breathing-call {
+  0%, 100% { box-shadow: 0 0 6px rgba(253, 152, 50, 0.5); }
+  50%      { box-shadow: 0 0 14px rgba(253, 152, 50, 0.75); }
+}
+/* What changed:  ● Removed slide-in animation (so icons don’t disappear on load).   ● Breathing glow continues normally.
+  ● On hover → glow smoothly blends to stronger glow with transition instead of cutting off.  ● Tooltip brand colors remain intact. */
+/******************* END-11 ********************/
+
+
+/******************* CSS-12 ********************/
+/* You want to apply the elegant “breath” animation from the CSS Party5 example to your existing social icons in SocialBar.jsx, replacing or enhancing the current glow effect. Let’s make your icons gently pulse with that stylish scale and lift effect. */
+/* ✅ Step 1: Add the breath Keyframes to Your CSS -  Insert this animation into your SocialBar.css: */
+@keyframes breath {
+  from {
+    animation-timing-function: ease-out;
+  }
+  to {
+    transform: scale(1.25) translateY(-5px) perspective(1px);
+    text-shadow: 0 0 20px rgba(37, 211, 102, 0.6); /* You can customize per brand */
+    animation-timing-function: ease-in-out;
+  }
+}
+/* You can replace the text-shadow color with brand-specific glows if you want each icon to breathe in its own color. */
+/* ✅ Step 2: Apply the Animation to Your Icons -  Now update your .social-icon base class to include the breath animation: */
+.social-bar .social-icon {
+  animation: breath 1.2s infinite alternate ease-in-out;
+}
+/* You can adjust the duration (1.2s) to match the original --speed value from the Party5 demo (1200ms), or tweak it to your liking. */
+/* 🌀 Optional: Combine with Existing Glow
+    If you want to keep your current glow and layer the breath effect, you can combine animations like this: */
+.social-bar .social-icon.facebook {
+  background: #1877f2;
+  animation: breath 1.2s infinite alternate ease-in-out, breathing-facebook 3s infinite ease-in-out;
+}
+/* Repeat for WhatsApp, Messenger, and Call icons using their respective glow animations. */
+/* 🎨 Optional: Brand-Specific Breath Shadows
+To make each icon’s breath effect match its brand color, you can duplicate the breath keyframes per brand: */
+@keyframes breath-facebook {
+  from { animation-timing-function: ease-out; }
+  to {
+    transform: scale(1.25) translateY(-5px) perspective(1px);
+    text-shadow: 0 0 20px rgba(24, 119, 242, 0.6);
+    animation-timing-function: ease-in-out;
+  }
+}
+/* Then apply: */
+.social-bar .social-icon.facebook {
+  animation: breath-facebook 1.2s infinite alternate ease-in-out;
+}
+/* Same for WhatsApp, Messenger, and Call. */
+/******************* END-12 ********************/
+
+
+/******************* CSS-13 ********************/
+/* Let’s turn your SocialBar into a dazzling, animated celebration of interactivity 🎉. I’ve refined your CSS to:
+  - 💥 Intensify the glow on hover  |  - 🎈 Add playful bounce and rotation effects  |  - 🧼 Clean up any redundant or unused styles
+  - 🌬️ Keep the breathing animation smooth and brand-colored  |  Here’s your final CSS party edition: [Shared] */
+/************ SOCIAL ICON PARTY MODE ************/
+.social-bar {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Base Icon Style */
+.social-bar .social-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Tooltip */
+.social-bar .social-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 55px;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.social-bar .social-icon:hover::after {
+  opacity: 1;
+}
+
+/* Brand Colors + Dual Animations */
+.social-bar .social-icon.facebook {
+  background: #1877f2;
+  animation: breath-facebook 1.2s infinite alternate ease-in-out,
+             breathing-facebook 3s infinite ease-in-out;
+}
+.social-bar .social-icon.whatsapp {
+  background: #25d366;
+  animation: breath-whatsapp 1.2s infinite alternate ease-in-out,
+             breathing-whatsapp 3s infinite ease-in-out;
+}
+.social-bar .social-icon.messenger {
+  background: #0084ff;
+  animation: breath-messenger 1.2s infinite alternate ease-in-out,
+             breathing-messenger 3s infinite ease-in-out;
+}
+.social-bar .social-icon.call {
+  background: #FD9832;
+  animation: breath-call 1.2s infinite alternate ease-in-out,
+             breathing-call 3s infinite ease-in-out;
+}
+
+/* Tooltip Backgrounds */
+.social-bar .social-icon.facebook::after { background: #1877f2; }
+.social-bar .social-icon.whatsapp::after { background: #25d366; }
+.social-bar .social-icon.messenger::after { background: #0084ff; }
+.social-bar .social-icon.call::after { background: #FD9832; }
+
+/* Hover: Party Effects */
+.social-bar .social-icon:hover {
+  transform: scale(1.25) rotate(-5deg);
+  animation: bounce 0.6s ease;
+}
+
+/* Hover Glow Intensified */
+.social-bar .social-icon.facebook:hover {
+  box-shadow: 0 0 28px rgba(24, 119, 242, 1),
+              0 0 48px rgba(24, 119, 242, 0.9);
+}
+.social-bar .social-icon.whatsapp:hover {
+  box-shadow: 0 0 28px rgba(37, 211, 102, 1),
+              0 0 48px rgba(37, 211, 102, 0.9);
+}
+.social-bar .social-icon.messenger:hover {
+  box-shadow: 0 0 28px rgba(0, 132, 255, 1),
+              0 0 48px rgba(0, 132, 255, 0.9);
+}
+.social-bar .social-icon.call:hover {
+  box-shadow: 0 0 28px rgba(253, 152, 50, 1),
+              0 0 48px rgba(253, 152, 50, 0.9);
+}
+
+/* Breathing Glow Animations */
+@keyframes breathing-facebook {
+  0%, 100% { box-shadow: 0 0 20px rgba(24, 119, 242, 0.6); }
+  50%      { box-shadow: 0 0 30px rgba(24, 119, 242, 0.85); }
+}
+@keyframes breathing-whatsapp {
+  0%, 100% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.6); }
+  50%      { box-shadow: 0 0 30px rgba(37, 211, 102, 0.85); }
+}
+@keyframes breathing-messenger {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 132, 255, 0.6); }
+  50%      { box-shadow: 0 0 30px rgba(0, 132, 255, 0.85); }
+}
+@keyframes breathing-call {
+  0%, 100% { box-shadow: 0 0 20px rgba(253, 152, 50, 0.6); }
+  50%      { box-shadow: 0 0 30px rgba(253, 152, 50, 0.85); }
+}
+
+/* Breath Animations */
+@keyframes breath-facebook {
+  from { animation-timing-function: ease-out; }
+  to {
+    transform: scale(1.25) translateY(-5px) perspective(1px);
+    text-shadow: 0 0 24px rgba(24, 119, 242, 0.7);
+    animation-timing-function: ease-in-out;
+  }
+}
+@keyframes breath-whatsapp {
+  from { animation-timing-function: ease-out; }
+  to {
+    transform: scale(1.25) translateY(-5px) perspective(1px);
+    text-shadow: 0 0 24px rgba(37, 211, 102, 0.7);
+    animation-timing-function: ease-in-out;
+  }
+}
+@keyframes breath-messenger {
+  from { animation-timing-function: ease-out; }
+  to {
+    transform: scale(1.25) translateY(-5px) perspective(1px);
+    text-shadow: 0 0 24px rgba(0, 132, 255, 0.7);
+    animation-timing-function: ease-in-out;
+  }
+}
+@keyframes breath-call {
+  from { animation-timing-function: ease-out; }
+  to {
+    transform: scale(1.25) translateY(-5px) perspective(1px);
+    text-shadow: 0 0 24px rgba(253, 152, 50, 0.7);
+    animation-timing-function: ease-in-out;
+  }
+}
+
+/* Bounce on Hover */
+@keyframes bounce {
+  0%   { transform: scale(1.25) rotate(-5deg); }
+  50%  { transform: scale(1.35) rotate(5deg); }
+  100% { transform: scale(1.25) rotate(-5deg); }
+}
+/* This version gives your icons a lively bounce, a stronger glow, and a smooth breathing rhythm that feels dynamic and modern. */
+/* To add sparkles around your social icons, here’s what you need to update:
+✅ 1. Add Sparkle Keyframes -  Insert this near your other animations: */
+@keyframes sparkle {
+  0%, 100% {
+    box-shadow:
+      0 0 6px rgba(255, 255, 255, 0.3),
+      0 0 12px rgba(255, 255, 255, 0.2),
+      0 0 18px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 12px rgba(255, 255, 255, 0.6),
+      0 0 24px rgba(255, 255, 255, 0.4),
+      0 0 36px rgba(255, 255, 255, 0.2);
+  }
+}
+/* ✅ 2. Apply Sparkle to Icons -  Update each icon’s class to include the sparkle animation: */
+.social-bar .social-icon.facebook {
+  background: #1877f2;
+  animation: breath-facebook 1.2s infinite alternate ease-in-out,
+             breathing-facebook 3s infinite ease-in-out,
+             sparkle 2s infinite ease-in-out;
+}
+/* Repeat for .whatsapp, .messenger, and .call, adjusting the sparkle duration if you want variation.  ||  This will layer a subtle white sparkle glow on top of your brand-colored breathing and bounce effects—like a magical aura dancing around each icon. */
+/******************* END-13 ********************/
+
+
+/******************* CSS-14 ********************/
+/******************* END-14 ********************/
+/******************* CSS-15 ********************/
+/******************* END-15 ********************/

@@ -1,0 +1,60 @@
+/*.....................................
+      Responsive Section Start
+.....................................*/
+/* X-Large Devices (Large Desktops, 1200px to <1400px) */
+@media (max-width: 1399.98px) {}
+
+/* Large Devices (Desktops or Laptops, 992px to <1200px) */
+@media (max-width: 1199.98px) {}
+
+/* Medium Devices (Laptops or Tablets, 768px to <992px) */
+@media (max-width: 991.98px) {}
+
+/* Small Devices (Landscape Phones, 576px to <768px) */
+@media (max-width: 767.98px) {}
+
+/* X-Small Devices (Portrait Phones, 480px to <576px) */
+@media (max-width: 575.98px) {}
+
+/* XX-Small Devices (Small Phones, 320px to <480px) */
+@media (max-width: 479.98px) {}
+
+/* XS-Small Devices (Small Phones, 280px to <320px) */
+@media (max-width: 319.98px) {}
+/*..... Responsive Section End ......*/
+
+
+
+/****** Background & Text Color ******/
+.bg-1 { background: #186A3B; }
+.bg-2 { background: #1D8348; }
+.bg-3 { background: #239B56; }
+.bg-4 { background: #28B463; }
+.bg-5 { background: #2ECC71; }
+.bg-6 { background: #58D68D; }
+.bg-7 { background: #82E0AA; }
+.bg-8 { background: #ABEBC6; }
+.bg-9 { background: #D5F5E3; }
+.bg10 { background: #EAFAF1; }
+.bg11 { background: #EDF9F2; }
+.bg12 { background: #F2F8F5; }
+.text-pri { color: #009146; } /*  #009146 = #239B56; */
+.hover1 { color: #DE9125; }
+.hover2 { color: #DF9F45; }
+.hover3 { color: #E1A95B; }
+
+/* backup colors */
+.backup-one {
+  background: #186A3B;
+  background: #1D8348;
+  background: #239B56;
+  background: #28B463;
+  background: #2ECC71;
+  background: #58D68D;
+  background: #82E0AA;
+  background: #ABEBC6;
+  background: #D5F5E3;
+  background: #EAFAF1;
+  /* https://htmlcolorcodes.com/ */
+}
+/* -- Background & Text Color End -- */
