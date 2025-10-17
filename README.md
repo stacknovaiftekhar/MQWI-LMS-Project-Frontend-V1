@@ -1,13 +1,14 @@
 # 🌙 Markazul Quran Wassunnah Institute – Learning Management System (LMS)
 
-### 📚 Full-Stack LMS | Django REST Framework + React | MySQL
+### 📚 Full-Stack LMS | Django + Django REST Framework | React | MySQL
 
 ![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)
+![Django](https://img.shields.io/badge/Backend-Django-yellow?logo=django)
 ![Django REST Framework](https://img.shields.io/badge/Backend-Django%20REST%20Framework-green?logo=django)
 ![MySQL](https://img.shields.io/badge/Database-MySQL-orange?logo=mysql)
 ![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-purple?logo=bootstrap)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
-![Deployment](https://img.shields.io/badge/Deployed-Linux%20Server%20(Ubuntu)-blue?logo=linux)
+![License](https://img.shields.io/badge/License-MIT-lightgrey?logo=mit)
+![Deployment](https://img.shields.io/badge/Deployed-Linux%20Server%20(Ubuntu)-cyan?logo=linux)
 
 ---
 
@@ -25,9 +26,9 @@ This project enables **admins, teachers, and students** to interact through a un
 | **Frontend** | React.js, JavaScript (ES6), Bootstrap, HTML5, CSS3 |
 | **Backend** | Django 5, Django REST Framework (DRF) |
 | **Database** | MySQL |
-| **Server / Deployment** | Gunicorn, Nginx, Linux (Ubuntu) |
+| **Server / Deployment** | Passenger, LiteSpeed, Linux (Ubuntu) |
 | **Authentication** | JWT Authentication |
-| **PDF & Email** | ReportLab, Django Email Utilities |
+| **PDF & Email** | WeasyPrint, Django Email Utilities |
 | **Media Handling** | Django Media Storage (images, videos, PDFs) |
 | **Version Control** | Git & GitHub |
 
@@ -125,7 +126,7 @@ mqwi-frontend/
 🔹 Generating and emailing **PDF invoices** dynamically  
 🔹 Managing **media/static files** in production  
 🔹 Building responsive, reusable React components  
-🔹 Deploying Django + React on **Ubuntu with Nginx and Gunicorn**
+🔹 Deploying Django + React on **Ubuntu with LiteSpeed and Passenger**
 
 ---
 
@@ -134,7 +135,7 @@ mqwi-frontend/
 ## Backend Setup:
 
 # Clone the repository
-git clone https://github.com/yourusername/mqwi-lms.git
+git clone https://github.com/stacknovaiftekhar/mqwi-lms.git
 cd mqwi-lms/backend
 
 # Create and activate virtual environment
@@ -166,11 +167,11 @@ npm start
 
 - Server: Ubuntu 22.04 LTS
 
-- Web Server: Nginx + Gunicorn
+- Web Server: LiteSpeed + Passenger
 
 - Static & Media Root: /home/markazul/server/static/ and /home/markazul/server/media/
 
-- Reverse Proxy: Configured via Nginx to serve React build and Django API endpoints
+- Reverse Proxy: Configured via LiteSpeed to serve React build and Django API endpoints
 
 ---
 
@@ -184,14 +185,14 @@ This project is licensed under the MIT License – feel free to use, modify, and
 
 👤 Developer: Iftekhar Hasan
 
-📧 Contact: iftekhar.hasan@example.com
+📧 Contact: engr.iftekhar.hasan@gmail.com
 
 🏫 Organization: Markazul Quran Wassunnah Institute (MQWI)
 
-“Empowering Quranic learning through technology.” 🌙
+“Empowering Quranic Learning Through Technology.” 🌙
 
 ---
 
-⭐ If you like this project, please give it a star on GitHub! ⭐
+⭐ If you like this Project, please give it a Star on GitHub! ⭐
 
 ---
